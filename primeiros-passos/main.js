@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React3 = require_react();
+          var React4 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React3.Children.forEach(props.children, function(child) {
+                  React4.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React3.Component().refs;
+          var emptyRefsObject = new React4.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23513,8 +23513,35 @@
 
   // src/App.jsx
   var import_react = __toESM(require_react());
+
+  // src/exercicios/ListColors.jsx
+  var produtos = [
+    {
+      id: 1,
+      nome: "Smartphone",
+      preco: "R$ 2000",
+      cores: ["#29d8d5", "#252434", "#fc3766"]
+    },
+    {
+      id: 2,
+      nome: "Notebook",
+      preco: "R$ 000",
+      cores: ["#ffd045", "#d4394b", "#fc3796"]
+    },
+    {
+      id: 3,
+      nome: "tablet",
+      preco: "R$ 2000",
+      cores: ["#29d8d5", "#252434", "#fc3766"]
+    }
+  ];
+  var ListColors = () => {
+    return /* @__PURE__ */ React.createElement("section", null, produtos.filter((produto) => Number(produto.preco.replace("R$", "")) > 1500).map((produto) => /* @__PURE__ */ React.createElement("div", { key: produto.id }, /* @__PURE__ */ React.createElement("h1", null, produto.nome), /* @__PURE__ */ React.createElement("p", null, "Pre\xE7o: ", produto.preco), /* @__PURE__ */ React.createElement("ul", null, produto.cores.map((cor) => /* @__PURE__ */ React.createElement("li", { key: cor, style: { backgroundColor: cor, color: "white" } }, cor))))));
+  };
+
+  // src/App.jsx
   var App = () => {
-    return /* @__PURE__ */ import_react.default.createElement("a", { href: "https://www.origamid.com" }, "Origamid");
+    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, "hello world2", /* @__PURE__ */ import_react.default.createElement(ListColors, null));
   };
   var App_default = App;
 

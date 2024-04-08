@@ -1,7 +1,15 @@
 import React from "react";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+
 
 const App = () => {
-  return <a href="https://www.origamid.com">Origamid</a>
+  
+  return (
+    <BrowserRouter>
+    
+    </BrowserRouter>
+  );
 };
 
 export default App;
